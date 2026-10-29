@@ -1,0 +1,54 @@
+[project]
+name = 'countess-sql'
+dynamic = ["version"]
+readme = "README.md"
+authors = [
+    { name = "Nick Moore", email="nick@zoic.org" },
+]
+maintainers = [
+    { name = "Nick Moore", email="nick@zoic.org" },
+]
+description = "Embedding SQL into CountESS"
+requires-python = ">=3.10"
+classifiers = [
+    'Development Status :: 2 - Pre-Alpha',
+    'Intended Audience :: Science/Research',
+    'Operating System :: OS Independent',
+    'Programming Language :: Python :: 3',
+    'Topic :: Scientific/Engineering :: Bio-Informatics',
+]
+dependencies = [
+    "countess>=0.1.27",
+]
+license = "BSD-3-Clause"
+
+[project.urls]
+Homepage = "https://github.com/CountESS-Project/countess-sql"
+Repository = "https://github.com/CountESS-Project/countess-sql.git"
+
+[project.optional-dependencies]
+dev = [
+    "countess[dev]>=0.1.27",
+]
+
+[project.entry-points.countess_plugins]
+sql_statement = "countess_sql:SqlStatementPlugin"
+
+[tool.setuptools.dynamic]
+version = { attr = "countess_sql.VERSION" }
+readme = { file = "README.md", content-type="text/markdown" }
+
+[tool.pylint]
+disable = [
+    "fixme",
+    "invalid-name",
+    "missing-class-docstring",
+    "missing-function-docstring",
+    "missing-module-docstring",
+    "no-else-return",
+    "too-many-ancestors",
+]
+max-line-length = 120
+
+[tool.black]
+line-length = 120
