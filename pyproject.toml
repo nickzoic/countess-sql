@@ -28,7 +28,7 @@ Repository = "https://github.com/CountESS-Project/countess-sql.git"
 
 [project.optional-dependencies]
 dev = [
-    "countess[dev]>=0.1.27",
+    "countess[dev]>=0.1.28",
 ]
 
 [project.entry-points.countess_plugins]
